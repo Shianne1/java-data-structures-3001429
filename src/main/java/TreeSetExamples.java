@@ -1,6 +1,7 @@
 import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.Arrays;
 
 public class TreeSetExamples {
 
@@ -34,6 +35,9 @@ public class TreeSetExamples {
 
     TreeSet<String> result = Answer.createSortedTreeSet(word1, word2, word3);
     System.out.println(result);
+
+    TreeSet<String> result1 = Answer.createSortedTreeSet1(word1, word2, word3);
+    System.out.println(result1);
   }
 
 }
@@ -58,6 +62,13 @@ class Answer {
     return lengthSet;
 
     //return new TreeSet<>(lengthSet.);
+  }
+
+  static TreeSet<String> createSortedTreeSet1(String word1, String word2, String word3) {
+    TreeSet<String> set = new TreeSet<>(Comparator.comparing(String::length));
+    set.addAll(Arrays.asList(word1, word2, word3));
+    return set;
+
   }
 
 }
