@@ -22,6 +22,36 @@ public class ArrayExamples {
     }
     System.out.println(Arrays.toString(weekdays));
 
+
+
+
+    // Test the incrementArray method
+    int[] numbers = {1, 2, 3, 4, 5};
+    int[] incrementedNumbers = IncrementArrays.incrementArray(numbers);
+
+    // Print the incremented array
+    for (int number : incrementedNumbers) {
+      System.out.print(number + " ");
+    }
   }
 
+}
+
+class IncrementArrays {
+  // Change these boolean values to control whether you see
+  // the expected result and/or hints.
+  static boolean showExpectedResult = true;
+  static boolean showHints = true;
+
+  // Increment each number in the 'numbers' array by one
+  static int[] incrementArray(int[] numbers) {
+    int[] result = new int[numbers.length];
+
+    for(int i = 0; i < numbers.length; i++){
+      result[i] = numbers[i] + 1;
+      //numbers = new int[numbers.length];
+    }
+    return result;
+    //return new int[numbers.length];
+  }
 }
